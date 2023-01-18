@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Weather Dashboard</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
@@ -13,14 +13,25 @@
     />
     <link rel="stylesheet" href="
   </head>
-  <body>
-    <header class="container-fluid text-center bg-dark text-white p-3">
-      <h1>Weather Dashboard</h1>
+  <body bg-white text-dark>
+    <header class="h1 bg-primary text-center h p-3">
+      <section class="text-center container-fluid">
+        <h1 class="mb-0">Weather Dashboard</h1>
+      </section>
     </header>
-    <main class="container-fluid">
+
+    <main class="container-fluid bg-white">
       <div class="row">
-        <aside class="col-lg-3">
+        <!-- Search location input and button -->
+        <aside class="col-lg-2 m-3 border-bottom border-dark">
           <h2>Search for a City:</h2>
+          <form>
+            <section class="mb-3">
+              <input aria-describedby="userInput" />
+            </section>
+
+            <button type="submit">Search</button>
+          </form>
         </aside>
       </div>
     </main>
