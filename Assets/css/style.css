@@ -1,7 +1,23 @@
+/* Styling for Header */
 #header {
   color: white;
   background: red;
   font-size: 30px;
   text-align: left;
   font-weight: bold;
+}
+
+/* Styling for Delete History Button */
+#delete-history {
+  color: gray;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Styling for rendered weather info */
+.card {
+  width: 20px;
+  background: red;
+  color: white;
+  text-align: center;
 }
