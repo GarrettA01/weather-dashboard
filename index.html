@@ -13,90 +13,19 @@
     />
     <link rel="stylesheet" href="
   </head>
-  <body bg-white text-dark>
-    <header class="h1 bg-primary text-center h p-3">
-      <section class="text-center container-fluid">
-        <h1 class="mb-0">Weather Dashboard</h1>
-      </section>
+  <body>
+    <header class="container-fluid text-container py-4">
+      <div class="row">
+        <h1>Weather Dashboard</h1>
+      </div>
     </header>
 
-    <main class="container-fluid bg-white">
-      <div class="row">
-        <!-- Search location input and button -->
-        <aside class="col-lg-2 m-3 border-bottom border-dark">
-          <h2>Search for a City:</h2>
-          <form>
-            <section class="mb-3">
-              <input aria-describedby="userInput" />
-            </section>
-
-            <button type="submit">Search</button>
-          </form>
-        </aside>
-
-        <article class="col-lg-9 bg-secondary border border-dark p-3 m-3">
-          <!-- Details of searched city -->
-          <h2>Select City</h2>
-          <ul>
-            <li class="p-2">Temp:</li>
-            <li class="p-2">Wind:</li>
-            <li class="p-2">Humidity:</li>
-          </ul>
-        </article>
-      </div>
-    </main>
-
-    <main class="container-fluid bg-dark">
-      <div class="row">
-        <!-- history column -->
-        <aside id="history" class="col-lg-2 m-3">
-          <h3>Recent Searches:</h3>
-        </aside>
-        <!-- start of 5 day cards -->
-        <article class="col-lg-9 p-3 m-3">
-          <h3>5 Day Forecast:</h3>
-          <div class="container-fluid">
-            <div class="row">
-              <figure
-                class="weatherCard bg-secondary text-light col-lg-2 p-3 m-3"
-              ></figure>
-
-              <figure
-                class="weatherCard bg-secondary col-lg-2 p-3 m-3"
-              ></figure>
-
-              <figure
-                class="weatherCard bg-secondary col-lg-2 p-3 m-3"
-              ></figure>
-
-              <figure
-                class="weatherCard bg-secondary col-lg-2 p-3 m-3"
-              ></figure>
-
-              <figure
-                class="weatherCard bg-secondary col-lg-2 p-3 m-3"
-              ></figure>
-            </div>
-          </div>
-        </article>
-      </div>
-    </main>
-
     <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
       crossorigin="anonymous"
     ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
-    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
