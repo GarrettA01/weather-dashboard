@@ -7,6 +7,10 @@
   font-weight: bold;
 }
 
+#background-img {
+  background-image: url("../Assets/Images/lightning-storm-australia.jpg");
+}
+
 #button {
   background: red;
   text-decoration: none;
