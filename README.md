@@ -2,15 +2,15 @@
 
 ## Table of Contents
 
--[Description](#description)
+- [Description](#description)
 
--[Deployed Page](#deployed-page)
+- [Deployed Page](#deployed-page)
 
--[Screenshot](#screenshot)
+- [Screenshot](#screenshot)
 
--[Credits](#credits)
+- [Credits](#credits)
 
--[Contact](#contact)
+- [Contact](#contact)
 
 ## Description
 
