@@ -48,6 +48,7 @@ function fiveDayForecast() {
       var dayData = response.list[i];
       var timeDate = dayjs.unix(dayData.dt);
       var dateFormatted = timeDate.format("MM/DD/YYYY");
+      var cardHtml;
       var iconUrl =
         "https://openweathermap.org/img/w/" + dayData.weather[0].icon + ".png";
       // builds cards from only hours in the late afternoon, the warmest point of the day
@@ -58,7 +59,7 @@ function fiveDayForecast() {
         timeDate.$H === 18
       ) {
         // adds the following code block to cardHtml for every instance above as the for loop goes through the response from the API
-        var cardHtml += `<div class="card m-2">
+        cardHtml += `<div class="card m-2">
         <ul class="list-unstyled p-3">
             <li>${dateFormatted}</li>
             <li><img src="${iconUrl}"></li>
