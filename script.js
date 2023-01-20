@@ -1,12 +1,25 @@
 //Variables
-var userForm = document.getElementById("user-input");
-var userForm = document.getElementById("form-sbt");
-
-var weatherApi = "https://api.opemweathermap.org/data/2.5/weather?lat=";
-
 var key = "46256012a49a37d8e104f08913eb594e";
-var key2 = "4a96d5adb653472a52d15b28efbc1ef7";
+var today = dayjs();
+var currentWeather = $("#current-weather");
+var forecast = $("#five-day-forecast");
 
 //Functions
 
+// this function saves the city to local storage
+function saveCity(newCity) {
+  var citySaved = false;
+  // checks to see if city exists in the localstorage
+  for (var i = 0; i < localStorage.length; i++) {
+    if (localStorage["cities" + i] === newCity) {
+      citySaved = true;
+      break;
+    }
+  }
+
+  // if the city is not already in localstorage, will save to local storage here
+  if (citySaved === false) {
+    localStorage.setItem("cities" + localStorage.length, newCity);
+  }
+}
 //Event Listeners
