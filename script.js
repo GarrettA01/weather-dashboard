@@ -23,7 +23,7 @@ function saveCity(newCity) {
   }
 }
 
-// function to get the five day forecast, build cards, and append to DOM
+// function to get the forecast, build cards, and append to DOM
 function fiveDayForecast() {
   var city = $("#city-search").val();
   var searchUrl =
@@ -87,5 +87,39 @@ function printHistory() {
   } else {
     $("#clear-history").html("");
   }
+}
+
+// gets the current conditions from the openweather API, rather than the forecast
+function getCurrentWeather() {
+  var city = $("#city-search").val();
+  var searchUrl =
+    "https://api.openweathermap.org/data/2.5/weather?q=" +
+    city +
+    "&units=metric&appid=" +
+    key;
+
+  // queries the API, then saves the searched city to localStorage, builds and appends to current weather
+  $.ajax({
+    url: searchUrl,
+    method: "GET",
+    crossDomain: true,
+  }).then(function (response) {
+    console.log(response);
+    saveCity(city);
+    var weatherIcon =
+      "https://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
+
+    var weatherHTML = `
+          <h3>${response.name} ${today.format(
+      "MM/DD/YYYY"
+    )} <img src="${weatherIcon}"></h3>
+              <ul class="list-unstyled">
+                <li>Temp: ${response.main.temp}&#8451;</li>
+                <li>Wind: ${response.wind.speed} mph</li>
+                <li>Humidity: ${response.main.humidity}%</li>
+              </ul>`;
+
+    $("#current-weather").html(weatherHTML);
+  });
 }
 //Event Listeners
