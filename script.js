@@ -30,7 +30,7 @@ function fiveDayForecast() {
     "https://api.openweathermap.org/data/2.5/forecast?q=" +
     city +
     "&units=metric&appid=" +
-    apiKey;
+    key;
 
   $.ajax({
     url: searchUrl,
@@ -54,7 +54,7 @@ function fiveDayForecast() {
       var iconUrl =
         "https://openweathermap.org/img/w/" + dayData.weather[0].icon + ".png";
       // adds the following code block to cardHtml for every instance above as the for loop goes through the response from the API
-      cardHtml += `<div class="card m-2">
+      cardHtml += `<div class="card m-2 rounded">
         <ul class="list-unstyled p-3">
             <li>${dateFormatted}</li>
             <li><img src="${iconUrl}"></li>
@@ -64,9 +64,28 @@ function fiveDayForecast() {
         </ul>
       </div>`;
     }
-    // fills forecastdiv with the html created in the for loop
+    // fills forecast with the html created in the for loop
     forecastDiv.html(cardHtml);
     console.log(typeof cardHtml);
   });
+}
+
+function printHistory() {
+  $("#search-history").empty();
+
+  // if there are cities stores in localStorage, print them to a list under search bar
+  if (localStorage.length >= 0) {
+    for (var i = 0; i < localStorage.length; i++) {
+      var city = localStorage.getItem("cities" + i);
+      var cityListEl;
+      cityListEl = `<button class="list-group-item list-group-item-action">${city}</button>`;
+      $("#search-history").prepend(cityListEl);
+    }
+
+    // if localstorage is populated, will create a prompt to allow the user to delete localStorage
+    $("#clear-history").html($('<a id="clear-history" href="#">clear</a>'));
+  } else {
+    $("#clear-history").html("");
+  }
 }
 //Event Listeners
